@@ -20,7 +20,7 @@ function Pokemons({ limit }) {
           <p className="text-gray-400 text-center">Loading...</p>
         )}
         {!error && !isLoading && pokemonList && (
-          <ul>
+          <ul className="grid grid-cols-1 md:grid-cols-2">
             {pokemonList.map((pokemon) => (
               <li
                 key={pokemon.name}

@@ -24,6 +24,9 @@ function PaginationFooter({ start, end, count, prevPage, nextPage }) {
         >
           &larr; Prev
         </button>
+        <button className="disabled:opacity-50 flex items-center justify-center px-3 h-8 text-md font-medium text-white bg-gray-800 border-0 border-s border-gray-700 hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+          {end / 10}
+        </button>
         <button
           onClick={nextPage}
           disabled={end >= count}

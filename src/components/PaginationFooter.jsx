@@ -8,7 +8,7 @@ function PaginationFooter({ start, end, count, prevPage, nextPage }) {
         </span>{" "}
         to{" "}
         <span className="font-semibold text-gray-900 dark:text-white">
-          {end}
+          {Math.min(end, count)}
         </span>{" "}
         of{" "}
         <span className="font-semibold text-gray-900 dark:text-white">

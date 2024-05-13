@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Pokemons from "./components/Pokemons";
+import PokemonsLimited from "./components/PokemonsLimited";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Pokemons limit={10} />} />
+          <Route path="/limited" element={<PokemonsLimited limit={151} />} />
         </Routes>
       </BrowserRouter>
     </div>

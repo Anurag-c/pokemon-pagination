@@ -3,19 +3,19 @@ import { useFetch } from "../hooks/useFetch";
 import PaginationFooter from "./PaginationFooter";
 import PokemonList from "./PokemonList";
 
-function PokemonsLimited({ limit }) {
+function PokemonsLimited({ limit, pageLimit }) {
   const { data, isLoading, error } = useFetch(
     `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=0`
   );
   const [searchParams, setSearchParams] = useSearchParams();
   const page = !searchParams.get("page") ? 1 : Number(searchParams.get("page"));
-  const maxPages = Math.ceil(limit / 10);
+  const maxPages = Math.ceil(limit / pageLimit);
 
   const results = data && data.results ? data.results : [];
   const count = results.length;
   const pokemonList = results.sort((a, b) => a.name.localeCompare(b.name));
-  const start = page > maxPages ? 0 : (page - 1) * 10 + 1;
-  const end = page > maxPages ? 0 : page * 10;
+  const start = page > maxPages ? 0 : (page - 1) * pageLimit + 1;
+  const end = page > maxPages ? 0 : page * pageLimit;
 
   function nextPage() {
     const next = page === maxPages ? page : page + 1;

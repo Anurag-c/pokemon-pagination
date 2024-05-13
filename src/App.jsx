@@ -11,7 +11,10 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Pokemons limit={10} />} />
-          <Route path="/limited" element={<PokemonsLimited limit={151} />} />
+          <Route
+            path="/limited"
+            element={<PokemonsLimited limit={151} pageLimit={10} />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

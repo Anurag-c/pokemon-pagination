@@ -19,7 +19,7 @@ function PaginationFooter({ start, end, count, prevPage, nextPage }) {
       <div className="inline-flex mt-2 xs:mt-0 ">
         <button
           onClick={prevPage}
-          disabled={start === 1}
+          disabled={start === 1 || start === 0}
           className="disabled:opacity-50 flex items-center justify-center px-3 h-8 text-md font-medium text-white bg-gray-800 rounded-s hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
         >
           &larr; Prev
@@ -29,7 +29,7 @@ function PaginationFooter({ start, end, count, prevPage, nextPage }) {
         </button>
         <button
           onClick={nextPage}
-          disabled={end >= count}
+          disabled={end >= count || end === 0}
           className="disabled:opacity-50 flex items-center justify-center px-3 h-8 text-md font-medium text-white bg-gray-800 border-0 border-s border-gray-700 rounded-e hover:bg-gray-900 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
         >
           Next &rarr;
